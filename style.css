@@ -1,0 +1,107 @@
+h3 {
+    color: #2d6187;
+    font-weight: bold;
+  }
+  
+  footer {
+    text-align: center;
+  }
+  
+  h3,
+  h4,
+  div.forecast p,
+  div.forecast h5,
+  p.current-time,
+  p.description {
+    color: #2d6187;
+  }
+  
+  h4,
+  p.current-time,
+  p.description {
+    font-weight: lighter;
+    font-size: 20px;
+  }
+  p.description {
+    margin-top: -13px;
+  }
+  
+  div.container .card {
+    background-color: #bfcfff;
+    margin-top: 10px;
+    text-align: center;
+    border: 1px solid #f1f6f9;
+    border-radius: 20px;
+  }
+  
+  div.left-column {
+    text-align: left;
+    padding-left: 40px;
+    color: #f1f6f9;
+  }
+  
+  div.card {
+    padding: 20px;
+    border: 1px solid #f1f6f9;
+    border-radius: 10px;
+  }
+  
+  div .fa-cloud-sun {
+    font-size: 200px;
+    color: #d9e4dd;
+  }
+  
+  div .fa-cloud-rain,
+  div .fa-sun,
+  div .fa-cloud,
+  p i.fa-cloud-sun {
+    font-size: 40px;
+  }
+  
+  div .fa-cloud-rain {
+    color: #555555;
+  }
+  
+  div .fa-sun {
+    color: #ffa62b;
+  }
+  
+  div .fa-cloud {
+    color: #94b4a4;
+  }
+  
+  .adverb {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 18px;
+    color: #2d6196;
+  }
+  
+  #search-button {
+    border-radius: 0 4px 4px 0;
+  }
+  
+  #current-location-button {
+    padding: 6px 6px;
+  }
+  
+  #current-temperature {
+    color: #f1f6f9;
+    font-size: 50px;
+    line-height: 45px;
+  }
+  
+  #temperature-units {
+    position: relative;
+    top: -25px;
+  }
+  
+  #celsius-link,
+  #fahrenheit-link:hover {
+    text-decoration: none;
+  }
+  
+  div.forecast {
+    text-align: center;
+  }
+  
