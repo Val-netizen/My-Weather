@@ -52,6 +52,7 @@ h3 {
     margin: 3px;
     padding: 3px;
   }
+
   
   div .fa-cloud-rain,
   div .fa-sun,
@@ -96,6 +97,11 @@ h3 {
   #temperature-units {
     position: relative;
     top: -25px;
+  }
+  
+  .currently .active {
+    color: black;
+    cursor: default;
   }
   
   #celsius-link,

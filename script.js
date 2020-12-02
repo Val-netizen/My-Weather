@@ -48,7 +48,10 @@ currentTime.innerHTML = `${hours}:${minutes}`;
 function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   let temperature = document.querySelector("#current-temperature");
-  temperature.innerHTML = Math.round(response.data.main.temp);
+
+  celsiusTemperature = response.data.main.temp;
+
+  temperature.innerHTML = Math.round(celsiusTemperature);
   let tempMin = document.querySelector("#temp-min");
   tempMin.innerHTML = Math.round(response.data.main.temp_min);
   let tempMax = document.querySelector("#temp-max");
@@ -93,25 +96,48 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
+function displayFahrenheitTemperature (event) {
+  event.preventDefault();
+  fahrenheitTemperature = (celsiusTemperature * 9/5) + 32;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let temperature = document.querySelector("#current-temperature");
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature (event) {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  let temperature = document.querySelector("#current-temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
+let celsiusTemperature = null;
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
 search("Dublin");
 
 // Feature #3
-function showFahrenheit() {
-  displayTemp.innerHTML = "34";
-}
+//function showFahrenheit() {
+  //displayTemp.innerHTML = "34";}
+//function showCelsius() {
+ // displayTemp.innerHTML = "14";
+//}
+//let fahrenheitToggle = document.querySelector("#fahrenheit-link");
+//let celsiusToggle = document.querySelector("#celsius-link");
+//let displayTemp = document.querySelector("#current-temperature");
 
-function showCelsius() {
-  displayTemp.innerHTML = "14";
-}
-let fahrenheitToggle = document.querySelector("#fahrenheit-link");
-let celsiusToggle = document.querySelector("#celsius-link");
-let displayTemp = document.querySelector("#current-temperature");
-
-fahrenheitToggle.addEventListener("click", showFahrenheit);
-celsiusToggle.addEventListener("click", showCelsius);
+//fahrenheitToggle.addEventListener("click", showFahrenheit);
+//celsiusToggle.addEventListener("click", showCelsius);
