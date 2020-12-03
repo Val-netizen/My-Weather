@@ -67,11 +67,33 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].main);
 }
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecast = response.data.list[0];
+
+  forecastElement.innerHTML = `
+  <div class="col">
+     <div class="card">
+      <div class="card-body">
+        <h5>Wed <br />21/10</h5>
+         <p>
+          <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+        </p>
+        <p>${Math.round(forecast.main.temp_min)}°|<strong>${Math.round(forecast.main.temp_max)}°</strong></p>
+      </div>
+      </div>
+    </div>
+    `
+}
+
 function search(city) {
   let apiKey = "4818761c04ded58b3835bb3810566f23";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
+
+  apiUrl = `api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {
