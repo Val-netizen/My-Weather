@@ -45,21 +45,20 @@ let currentTime = document.querySelector(".current-time");
 currentTime.innerHTML = `${hours}:${minutes}`;
 
 // Weather API
-function formatHours(date){
-  let date = now.getDate();
-
-  let h4 = document.querySelector("h4");
-  h4.innerHTML = `${day} ${date} ${month}`;
-  
-  let hours = now.getHours();
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = now.getMinutes();
+  let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
-  }  
+  }
+
+  return `${hours}:${minutes}`;
 }
+
 
 
 function displayWeather(response) {
