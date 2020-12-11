@@ -110,6 +110,7 @@ function displayForecast(response) {
     </div>
   `;
   }
+}
 
 
 function search(city) {
