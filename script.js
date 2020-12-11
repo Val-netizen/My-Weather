@@ -45,7 +45,7 @@ let currentTime = document.querySelector(".current-time");
 currentTime.innerHTML = `${hours}:${minutes}`;
 
 // Weather API
-function formatHours(timestamp){
+function formatHours(date){
   let date = now.getDate();
 
   let h4 = document.querySelector("h4");
@@ -89,24 +89,27 @@ function displayForecast(response) {
   forecastElement.innerHTML = null;
   let forecast = null;
 
-  for (let index = 0; index < 5; index ++) {
-  forecast = response.data.list[index];
-  forecastElement.innerHTML += `
-  <div class="col">
-     <div class="card">
-      <div class="card-body">
-        <h5> ${formatHours(forecast.dt * 1000)} </h5>
-         <p>
-          <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
-        </p>
-        <p>${Math.round(forecast.main.temp_min)}°|<strong>${Math.round(forecast.main.temp_max)}°</strong></p>
-      </div>
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+    <div class="col-2">
+      <h3>
+        ${formatHours(forecast.dt * 1000)}
+      </h3>
+      <img
+        src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+      />
+      <div class="weather-forecast-temperature">
+        <strong>
+          ${Math.round(forecast.main.temp_max)}°
+        </strong>
+        ${Math.round(forecast.main.temp_min)}°
       </div>
     </div>
-    `
+  `;
   }
-
-}
 
 
 function search(city) {
