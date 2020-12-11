@@ -9,8 +9,6 @@ h3 {
   
   h3,
   h4,
-  div.forecast p,
-  div.forecast h5,
   p.current-time,
   p.description {
     color: #2d6187;
@@ -41,7 +39,7 @@ h3 {
   }
   
   div.card {
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #f1f6f9;
     border-radius: 10px;
   }
@@ -53,25 +51,6 @@ h3 {
     padding: 3px;
   }
 
-  
-  div .fa-cloud-rain,
-  div .fa-sun,
-  div .fa-cloud,
-  p i.fa-cloud-sun {
-    font-size: 40px;
-  }
-  
-  div .fa-cloud-rain {
-    color: #555555;
-  }
-  
-  div .fa-sun {
-    color: #ffa62b;
-  }
-  
-  div .fa-cloud {
-    color: #94b4a4;
-  }
   
   .adverb {
     font-style: italic;
@@ -107,9 +86,5 @@ h3 {
   #celsius-link,
   #fahrenheit-link:hover {
     text-decoration: none;
-  }
-  
-  div.forecast {
-    text-align: center;
   }
   
