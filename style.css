@@ -19,7 +19,7 @@ h3 {
   }
   
   div.container .card {
-    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    background-color: #bfcfff;
     margin-top: 10px;
     text-align: center;
     border: 1px solid #f1f6f9;
