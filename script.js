@@ -159,21 +159,6 @@ function displayCelsiusTemperature (event) {
 }
 
 
-function displayMinFahrenheitTemperature (event) {
-  event.preventDefault();
-  minFahrenheitTemperature = (minCelsiusTemperature * 9/5) + 32;
-  let minTemperature = document.querySelector("#temp-min");
-  minTemperature.innerHTML = Math.round(minFahrenheitTemperature);
-}
-
-function displayMaxFahrenheitTemperature (event) {
-  event.preventDefault();
-  maxFahrenheitTemperature = (maxCelsiusTemperature * 9/5) + 32;
-  let maxTemperature = document.querySelector("#temp-max");
-  maxTemperature.innerHTML = Math.round(maxFahrenheitTemperature);
-}
-
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -187,9 +172,6 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-fahrenheitLink.addEventListener("click", displayMinFahrenheitTemperature);
-fahrenheitLink.addEventListener("click", displayMaxFahrenheitTemperature);
-
 
 search("Dublin");
 
