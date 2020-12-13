@@ -83,7 +83,31 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].main);
 }
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
 
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+    <div class="col-2">
+      <h3>
+        ${formatHours(forecast.dt*1000)}
+      </h3>
+      <img
+        src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+      />
+      <div class="weather-forecast-temperature">
+        <strong>
+          ${Math.round(forecast.main.temp_max)}°
+        </strong>
+        ${Math.round(forecast.main.temp_min)}°
+      </div>
+    </div>
+  `;
+  }
+}
 
 function search(city) {
   let apiKey = "4818761c04ded58b3835bb3810566f23";
@@ -150,15 +174,3 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 search("Dublin");
 
-// Feature #3
-//function showFahrenheit() {
-  //displayTemp.innerHTML = "34";}
-//function showCelsius() {
- // displayTemp.innerHTML = "14";
-//}
-//let fahrenheitToggle = document.querySelector("#fahrenheit-link");
-//let celsiusToggle = document.querySelector("#celsius-link");
-//let displayTemp = document.querySelector("#current-temperature");
-
-//fahrenheitToggle.addEventListener("click", showFahrenheit);
-//celsiusToggle.addEventListener("click", showCelsius);
