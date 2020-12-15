@@ -152,7 +152,9 @@ function currentPositionForecast(position) {
 
 function getCurrentLocation(event) {
   event.preventDefault();
-  navigator.geolocation.getCurrentPosition(handlePosition, currentPositionForecast);
+  navigator.geolocation.getCurrentPosition(handlePosition);
+  navigator.geolocation.getCurrentPosition(currentPositionForecast);
+
 }
 
 function displayFahrenheitTemperature (event) {
