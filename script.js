@@ -134,6 +134,7 @@ function handlePosition(position) {
   console.log(apiUrl);
 
   axios.get(apiUrl).then(displayWeather);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function getCurrentLocation(event) {
